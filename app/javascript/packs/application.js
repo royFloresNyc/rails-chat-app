@@ -3,12 +3,13 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+import 'bootstrap'
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
-require("jquery3")
-require("popper")
-require("bootstrap-sprockets")
+
+var Turbolinks = require("turbolinks");
+Turbolinks.start();
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -17,3 +18,12 @@ require("bootstrap-sprockets")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import './components/room';
+
+// $(document).on('turbolinks:load', function(){
+//   console.log('Document REady')
+//   $('#new_room_message').ajaxSuccess(function(a, b,c ) {
+//     $(this).find('input[type="text"]').val('');
+//   });
+// });
